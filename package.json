@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node -r esm index.js",
+    "dev": "nodemon -r esm index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -15,7 +15,8 @@
     "axios": "^0.19.0",
     "cheerio": "^1.0.0-rc.3",
     "esm": "^3.2.25",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -34,6 +35,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
+    "nodemon": "^1.19.1",
     "prettier": "^1.18.2"
   }
 }

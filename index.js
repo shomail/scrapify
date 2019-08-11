@@ -12,4 +12,4 @@ app.get('/scrape', async (req, res, next) => {
   res.json({ iCount, tCount });
 });
 
-app.listen(2019, () => console.log(`Scrapify API running on port: 2019`));
+app.listen(2019, () => console.log(`Scrapify API running on port: 2019 💻 ✅`));
