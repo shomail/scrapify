@@ -1,7 +1,10 @@
 import express from 'express';
 import { getIstagramCount, getTwitterCount } from './lib/scraper';
+import getDB from './lib/db';
 
+// App setup
 const app = express();
+const db = getDB();
 
 app.get('/scrape', async (req, res, next) => {
   console.log('scraping');
@@ -9,6 +12,18 @@ app.get('/scrape', async (req, res, next) => {
     getIstagramCount(),
     getTwitterCount(),
   ]);
+  db.get('twitter')
+    .push({
+      date: Date.now(),
+      count: tCount,
+    })
+    .write();
+  db.get('instagram')
+    .push({
+      date: Date.now(),
+      count: iCount,
+    })
+    .write();
   res.json({ iCount, tCount });
 });
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -r esm index.js",
+    "dev": "nodemon -r esm index.js --ignore db.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
